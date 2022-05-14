@@ -4,9 +4,9 @@
   "description": "NFT Lottery for chainlink hackaton",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoxZz5/nft-lottery.git"
+    "url": "git+https://github.com/ei9h7/nft-jeep-lottery.git"
   },
-  "author": "SoxZz5 / KonyTech / Juicy7",
+  "author": "ei9h7",
   "license": "MIT",
   "homepage": "https://github.com/SoxZz5/nft-lottery#readme",
   "scripts": {
