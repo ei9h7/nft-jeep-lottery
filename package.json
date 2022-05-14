@@ -1,14 +1,14 @@
 {
-  "name": "nft-lottery",
+  "name": "nft-jeep-lottery",
   "version": "1.0.0",
-  "description": "NFT Lottery for chainlink hackaton",
+  "description": "Raffle for a custom Jeep titled with an NFT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ei9h7/nft-jeep-lottery.git"
   },
   "author": "ei9h7",
   "license": "MIT",
-  "homepage": "https://github.com/SoxZz5/nft-lottery#readme",
+  "homepage": "https://github.com/ei9h7/nft-jeep-lottery#readme",
   "scripts": {
     "test:node": "echo \"Error: no test specified\" && exit 1",
     "hook:install": "npx --no-install husky add .husky/commit-msg \"npx --no-install commitlint --edit $1\" && npx --no-install husky add .husky/post-merge \"yarn build:node\"",
