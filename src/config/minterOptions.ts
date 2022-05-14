@@ -44,19 +44,19 @@ const options: MinterOptions = {
   ]),
   accessory: new MinterPart("Accessory", "/images/layers/accessory/accessory_", 
   [
-    { name: "Roof Rack" },
-    { name: "Mud Tires" },
+    { name: "Roof_Rack" },
+    { name: "Mud_Tires" },
     { name: "Antenna" },
     { name: "Lights" },
     { name: "Armor" }
   ]),
   power: new MinterPart("Power", "/images/layers/power/power_", 
   [
-    { name: "LS Swap" },
-    { name: "Hemi Swap" },
+    { name: "LS_Swap" },
+    { name: "Hemi_Swap" },
     { name: "Supercharged" },
-    { name: "3.6L" },
-    { name: "Squirrel Power" }
+    { name: "4BT_Swap" },
+    { name: "Squirrel_Power" }
   ])
 };
 export default options;
