@@ -13,7 +13,7 @@ const GithubIcon = createSvgIcon(
 
 const Footer: React.FunctionComponent = () => {
   const links: FooterLink[] = [
-    { link: "https://github.com/SoxZz5/nft-lottery", icon: GithubIcon },
+    { link: "https://github.com/ei9h7/nft-jeep-lottery", icon: GithubIcon },
   ];
   console.log(links);
   return (

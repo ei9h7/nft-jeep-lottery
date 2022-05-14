@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Link from "@mui/material/Link";
 import ConnectButton from "@/components/nav/ConnectButton";
 import logoName from "@/assets/images/logo-name.png";
-import logoShip from "@/assets/images/logo-ship.png";
+import logoJeep from "@/assets/images/logo-jeep.png";
 import { saveAs } from "file-saver";
 import whitePaper from "@/assets/whitepaper.pdf";
 import { SaveAltSharp } from "@mui/icons-material";
@@ -41,7 +41,7 @@ const NavBar: React.FunctionComponent = () => {
     <AppBar className="main-menu" color="transparent">
       <div className="main-menu_logo">
         <img src={logoName} className="logo-name" />
-        <img src={logoShip} className="logo-ship" />
+        <img src={logoJeep} className="logo-jeep" />
       </div>
       <div className="main-menu_menu">
         {menus.map((menu: Menu, index: number) => {

@@ -15,8 +15,9 @@ const Landing: React.FunctionComponent = () => {
             color={"white"}
             fontWeight={"bold"}
           >
-            Take part of the only one
-            <br /> space caritative mission
+            Take part in the only blockchain
+            <br /> jeep adventure to win a custom
+            <br /> V8 Jeep Race Truck
           </Typography>
           <Countdown />
         </div>
@@ -50,13 +51,13 @@ const Landing: React.FunctionComponent = () => {
       <div className="landing_subtitle">
         <div className="landing_subtitle-text">
           <Typography variant={"subtitle1"} component={"h2"} color={"white"}>
-            Craft your own NFT spaceship to participate in the first
+            Craft your own NFT Jeep to participate in the first
           </Typography>
         </div>
         <div className="landing_subtitle-text">
           <Typography variant={"subtitle1"} component={"h2"} color={"white"}>
-            <span className="secondary-text">blockchain charity raffle </span>
-            to save humanity.
+            <span className="secondary-text">blockchain raffle</span>
+            for a built V8 Jeep!
           </Typography>
         </div>
       </div>

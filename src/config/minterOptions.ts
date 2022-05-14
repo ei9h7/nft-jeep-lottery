@@ -1,8 +1,8 @@
 interface MinterOptions {
   body: MinterPart;
-  skin: MinterPart;
-  weapon: MinterPart;
-  booster: MinterPart;
+  colour: MinterPart;
+  accessory: MinterPart;
+  power: MinterPart;
 }
 
 class MinterPart {
@@ -28,35 +28,35 @@ interface MinterVariant {
 const options: MinterOptions = {
   body: new MinterPart("Body", "/images/layers/body/body_", 
   [
-    { name: "Bird" },
-    { name: "Dart" },
-    { name: "Bomber" },
-    { name: "Hawk" },
-    { name: "Cobra" }
+    { name: "Wrangler" },
+    { name: "Unlimited" },
+    { name: "JK8" },
+    { name: "Gladiator" },
+    { name: "Topless" }
   ]),
-  skin: new MinterPart("Skin", "/images/layers/skin/skin_", 
+  colour: new MinterPart("Colour", "/images/layers/colour/colour_", 
   [
-    { name: "Candy" },
-    { name: "Angel" },
-    { name: "Bat" },
-    { name: "Nightmare" },
-    { name: "Cadillac" }
+    { name: "Dune" },
+    { name: "Black" },
+    { name: "White" },
+    { name: "Orange" },
+    { name: "Green" }
   ]),
-  weapon: new MinterPart("Weapon", "/images/layers/weapon/weapon_", 
+  accessory: new MinterPart("Accessory", "/images/layers/accessory/accessory_", 
   [
-    { name: "Hearts" },
-    { name: "Torpedos" },
-    { name: "Inferno" },
-    { name: "Electromines" },
-    { name: "Phasers" }
+    { name: "Roof Rack" },
+    { name: "Mud Tires" },
+    { name: "Antenna" },
+    { name: "Lights" },
+    { name: "Armor" }
   ]),
-  booster: new MinterPart("Booster", "/images/layers/booster/booster_", 
+  power: new MinterPart("Power", "/images/layers/power/power_", 
   [
-    { name: "Aerozine" },
-    { name: "Hydrazine" },
-    { name: "Hydrogen" },
-    { name: "Dinitrogen" },
-    { name: "Oxygen" }
+    { name: "LS Swap" },
+    { name: "Hemi Swap" },
+    { name: "Supercharged" },
+    { name: "3.6L" },
+    { name: "Squirrel Power" }
   ])
 };
 export default options;

@@ -1,17 +1,17 @@
 import * as React from "react";
-import { Ship } from "@/components/minter/Minter";
+import { Jeep } from "@/components/minter/Minter";
 import minterOptions from "@/config/minterOptions";
 
-const MinterDisplay: React.FunctionComponent<{ ship: Ship }> = ({ ship }) => {
+const MinterDisplay: React.FunctionComponent<{ jeep: Jeep }> = ({ jeep }) => {
   return (
     <div className="minter-display">
-      <img className="body" src={`${minterOptions.body.getPath(ship.body)}`} />
-      <img className="skin" src={`${minterOptions.skin.getPath(ship.skin)}`} />
-      <img className="weapon" src={`${minterOptions.weapon.getPath(ship.weapon)}`} />
-      {ship.booster !== undefined ? (
+      <img className="body" src={`${minterOptions.body.getPath(jeep.body)}`} />
+      <img className="colour" src={`${minterOptions.colour.getPath(jeep.colour)}`} />
+      <img className="accessory" src={`${minterOptions.accessory.getPath(jeep.accessory)}`} />
+      {jeep.power !== undefined ? (
         <img
-          className="booster"
-          src={`${minterOptions.booster.getPath(ship.booster)}`}
+          className="power"
+          src={`${minterOptions.power.getPath(jeep.power)}`}
         />
       ) : (
         ""

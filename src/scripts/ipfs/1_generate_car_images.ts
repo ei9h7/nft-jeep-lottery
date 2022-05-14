@@ -12,22 +12,22 @@ import {
 } from './utils';
 
 const profilePicPath = `${imagesPath}/profile/${collectionProfilePicName}`;
-const destroyedShipName = "destroyed.png";
-const destroyedShipPath = `${imagesPath}/${destroyedShipName}`;
+const destroyedJeepName = "destroyed.png";
+const destroyedJeepPath = `${imagesPath}/${destroyedJeepName}`;
 
 function generateMergedImages(): Promise<sharp.OutputInfo[]> {
 
     const promises: Array<Promise<sharp.OutputInfo>> = [];
     minterOptions.body.variants.forEach((bodyVariant, bodyIndex) => {
-        minterOptions.skin.variants.forEach((skinVariant, skinIndex) => {
-            minterOptions.weapon.variants.forEach((weaponVariant, weaponIndex) => {
-                minterOptions.booster.variants.forEach((boosterVariant, boosterIndex) => {
+        minterOptions.colour.variants.forEach((colourVariant, colourIndex) => {
+            minterOptions.accessory.variants.forEach((accessoryVariant, accessoryIndex) => {
+                minterOptions.power.variants.forEach((powerVariant, powerIndex) => {
                     
-                    const filePath = `${generationTmpPath}/${bodyIndex}_${skinIndex}_${weaponIndex}_${boosterIndex}.png`;
-                    const promise = sharp(assetsPath + minterOptions.weapon.getPath(weaponIndex))
+                    const filePath = `${generationTmpPath}/${bodyIndex}_${colourIndex}_${accessoryIndex}_${powerIndex}.png`;
+                    const promise = sharp(assetsPath + minterOptions.accessory.getPath(accessoryIndex))
                                     .composite([
-                                        { input: assetsPath + minterOptions.skin.getPath(skinIndex) },
-                                        { input: assetsPath + minterOptions.booster.getPath(boosterIndex) },
+                                        { input: assetsPath + minterOptions.colour.getPath(colourIndex) },
+                                        { input: assetsPath + minterOptions.power.getPath(powerIndex) },
                                         { input: assetsPath + minterOptions.body.getPath(bodyIndex) }
                                     ])
                                     .toFile(filePath);
@@ -52,8 +52,8 @@ async function run() {
     // Copy collection logo to tmp/
     copyFile(profilePicPath, `${generationTmpPath}/${collectionProfilePicName}`)
     
-    // Copy destroyed ship visual to tmp/
-    copyFile(destroyedShipPath, `${generationTmpPath}/${destroyedShipName}`)
+    // Copy destroyed jeep visual to tmp/
+    copyFile(destroyedJeepPath, `${generationTmpPath}/${destroyedJeepName}`)
     
     // Generate all combinations of merged PNGs and save them to tmp/
     await generateMergedImages();

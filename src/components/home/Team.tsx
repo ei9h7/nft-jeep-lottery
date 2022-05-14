@@ -45,22 +45,22 @@ const GithubIcon = createSvgIcon(
 const Team: React.FunctionComponent = () => {
   const teamMember: TeamMember[] = [
     {
-      name: "Nicolas Cortella",
-      alias: "KonyTech",
+      name: "Ayton MacEachern",
+      alias: "ei9h7",
       img: astronaut,
-      desc: `Experienced engineer from the video game industry with a strong background in backend applications development.
-      Nicolas realizes the smart contract, the design of the lottery internal mechanics and the generation of dNFTs.
-      Backend is its playground and web3 its new crush.`,
+      desc: `Weird robot trying to be human, with an interest in cyber security, cryptography, and applications development.
+      Ayton develops the smart contracts, the lottery's internal mechanics, and the generation of NFTs.
+      web3 is its new crush.`,
       links: [
         {
           icon: LinkedinIcon,
           viewbox: "0 0 455 455",
-          url: "https://www.linkedin.com/in/nicolas-cortella/",
+          url: "https://www.linkedin.com/in/aytonmaceachern/",
         },
         {
           icon: GithubIcon,
           viewbox: "0 0 16 16",
-          url: "https://github.com/konytech",
+          url: "https://github.com/ei9h7",
         },
       ],
     },

@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material";
 import { lineHeight } from "@mui/system";
 import * as React from "react";
-import shipImg from "@/assets/images/ship-workspace.png";
-import genesisA from "@/assets/images/genesis/ship_a.png";
-import genesisB from "@/assets/images/genesis/ship_b.png";
-import genesisC from "@/assets/images/genesis/ship_c.png";
-import genesisD from "@/assets/images/genesis/ship_d.png";
-import genesisE from "@/assets/images/genesis/ship_e.png";
+import jeepImg from "@/assets/images/jeep-workspace.png";
+import genesisA from "@/assets/images/genesis/jeep_a.png";
+import genesisB from "@/assets/images/genesis/jeep_b.png";
+import genesisC from "@/assets/images/genesis/jeep_c.png";
+import genesisD from "@/assets/images/genesis/jeep_d.png";
+import genesisE from "@/assets/images/genesis/jeep_e.png";
 
 type RoadmapEl = {
   title: string;
@@ -16,17 +16,23 @@ type RoadmapEl = {
 const Roadmap: React.FunctionComponent = () => {
   const roadmap: RoadmapEl[] = [
     {
-      title: "End Development",
-      desc: "We need to end the development the application development to make the space a better place to be :)",
+      title: "Development",
+      desc: "Finish application development",
     },
     {
       title: "Minting Period",
-      desc: "You can craft as many ships as you want. Each one represents a raffle ticket for the adventure time.",
+      desc: "You can build as many jeeps as you want. Each one represents a raffle ticket for the prize drawing.",
     },
-    { title: "Tombola Preparation", desc: "" },
-    { title: "Adventure Time", desc: "" },
+    {
+      title: "Jeep Upgrade and Preparation",
+      desc: "Use this period to upgrade and prepare your Jeep for the big Wheeling Adventure!",
+    },
+    {
+      title: "Wheeling Adventure",
+      desc: "Many will try, but only one Jeep will make it through the difficult trail. Will it be you, that is the hero of our adventure, and winner of the Custom V8 Jeep?",
+    },
     { title: "Results", desc: "" },
-    { title: "Release of fund to associations", desc: "" },
+    { title: "Release of funds to charity associations", desc: "" },
   ];
   return (
     <div
@@ -46,7 +52,7 @@ const Roadmap: React.FunctionComponent = () => {
         <img src={genesisD} className="genesis-d" />
         <img src={genesisE} className="genesis-e" />
       </div>
-      <img src={shipImg} className="roadmap-ship" />
+      <img src={jeepImg} className="roadmap-jeep" />
       <Typography
         variant={"h4"}
         component={"h2"}

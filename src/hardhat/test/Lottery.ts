@@ -39,8 +39,8 @@ const createLotteryFixture = deployments.createFixture(async hre => {
     };
     
     const tokenInfo: Token = {
-        name: "LotteryTokenName",
-        symbol: "LTN",
+        name: "JeepLottery",
+        symbol: "JEEP",
         CID: "bafybeia42q2uhfd5erdp76uow4cejkwwdnntgexit36hq2agbqufhrsg3e"
     };
     
@@ -64,9 +64,9 @@ const createLotteryFixture = deployments.createFixture(async hre => {
     
     const lotteryParameters: Parameters = {
         chainCurrencyDecimals: new uint8(18),
-        ticketPriceUsd: new uint256(4),
-        fundsReleaseAddress: "0xf585378ff2A1DeCb335b4899250b83F46DC5c019",
-        totalWinners: new uint256(3),
+        ticketPriceUsd: new uint256(30),
+        fundsReleaseAddress: "0x6ccF4d2Dc91B15BFc3907f0A01f2Abf40a879799",
+        totalWinners: new uint256(1),
         token: tokenInfo,
         periods: periods,
         events: events,

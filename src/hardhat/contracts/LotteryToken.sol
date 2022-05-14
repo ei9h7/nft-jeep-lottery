@@ -7,29 +7,29 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "./Lottery.sol";
 
-library SpaceShips {
-    struct Ship {
-        ShipParts parts;
+library Jeeps {
+    struct Jeep {
+        JeepParts parts;
     }
 
-    struct ShipParts {
+    struct JeepParts {
         uint256 body;
-        uint256 skin;
-        uint256 weapon;
-        uint256 booster;
+        uint256 colour;
+        uint256 accessory;
+        uint256 power;
     }
 
-    function toString(Ship memory ship) internal pure returns (string memory) {
+    function toString(Jeep memory jeep) internal pure returns (string memory) {
         return
             string(
                 abi.encodePacked(
-                Strings.toString(ship.parts.body),
+                Strings.toString(jeep.parts.body),
                 "_",
-                Strings.toString(ship.parts.skin),
+                Strings.toString(jeep.parts.colour),
                 "_",
-                Strings.toString(ship.parts.weapon),
+                Strings.toString(jeep.parts.accessory),
                 "_",
-                Strings.toString(ship.parts.booster)
+                Strings.toString(jeep.parts.power)
                 )
             );
     }
@@ -41,7 +41,7 @@ contract LotteryToken is ERC721Enumerable, Ownable {
     string public CID;
     Lottery public lottery;
     Counters.Counter private _tokenIdsCounter;
-    mapping(uint256 => SpaceShips.Ship) private _lotteryTickets;
+    mapping(uint256 => Jeeps.Jeep) private _lotteryTickets;
 
     constructor(Lottery _lottery, string memory _name, string memory _symbol, string memory _CID) ERC721(_name, _symbol) {
         require(bytes(_CID).length > 0, "No CID provided");
@@ -50,9 +50,9 @@ contract LotteryToken is ERC721Enumerable, Ownable {
     }
 
     /*
-        * Returns the ship data from a tokenId
+        * Returns the jeep data from a tokenId
     */
-    function getShip(uint256 tokenId) public view returns (SpaceShips.Ship memory) {
+    function getJeep(uint256 tokenId) public view returns (Jeeps.Jeep memory) {
         return _lotteryTickets[tokenId];
     }
 
@@ -76,8 +76,8 @@ contract LotteryToken is ERC721Enumerable, Ownable {
             jsonName = "destroyed";
         } else {
             // Lottery is not complete or ticket is a winner
-            SpaceShips.Ship memory ship = _lotteryTickets[tokenId];
-            jsonName = SpaceShips.toString(ship);
+            Jeeps.Jeep memory jeep = _lotteryTickets[tokenId];
+            jsonName = Jeeps.toString(jeep);
         }
         return string(abi.encodePacked("ipfs://", CID, "/", jsonName, ".json"));
     }
@@ -86,11 +86,11 @@ contract LotteryToken is ERC721Enumerable, Ownable {
         * Allows to mint a new token
         * Only the owner (the lottery) can call this function
     */
-    function mint(address recipient, SpaceShips.Ship memory spaceShip) public onlyOwner returns(uint256) {
+    function mint(address recipient, Jeeps.Jeep memory jeep) public onlyOwner returns(uint256) {
         uint256 tokenId = _tokenIdsCounter.current();
         _safeMint(recipient, tokenId);
         
-        _lotteryTickets[tokenId] = spaceShip;
+        _lotteryTickets[tokenId] = jeep;
 
         _tokenIdsCounter.increment();
         return tokenId;

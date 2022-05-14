@@ -17,21 +17,21 @@ import maticIcon from "@/assets/images/icons/matic.png";
 import PolygonChainInfo from "@/config/polygonChain.config";
 import { useSelector } from "react-redux";
 
-export type Ship = {
+export type Jeep = {
   body: number;
-  skin: number;
-  weapon: number;
-  booster: number;
+  colour: number;
+  accessory: number;
+  power: number;
 };
 
 const Minter: React.FunctionComponent = () => {
   const minterStore = useSelector((state: any) => state.minter);
   const userStore = useSelector((state: any) => state.user);
-  const [curShip, setCurShip] = React.useState<Ship>({
+  const [curJeep, setCurJeep] = React.useState<Jeep>({
     body: 0,
-    skin: 0,
-    weapon: 0,
-    booster: 0,
+    colour: 0,
+    accessory: 0,
+    power: 0,
   });
   const [priceDisplay, setPriceDisplay] = React.useState<string>("X");
   const [priceUsdDisplay, setPriceUsdDisplay] = React.useState<string>("X");
@@ -57,13 +57,13 @@ const Minter: React.FunctionComponent = () => {
     ? utils.formatEther(BigNumber.from(userEtherBalance.toString())).slice(0, 5)
     : "";
   const mintActive = minterStore.state === 2;
-  const mintSpaceShip = async (): Promise<void> => {
+  const mintJeep = async (): Promise<void> => {
     if (userStore.connected) {
       try {
-        const shipParamsArray = [
-          [curShip.body, curShip.skin, curShip.weapon, curShip.booster],
+        const jeepParamsArray = [
+          [curJeep.body, curJeep.colour, curJeep.accessory, curJeep.power],
         ];
-        await minterStore.contract.participate(shipParamsArray, {
+        await minterStore.contract.participate(jeepParamsArray, {
           from: account,
           value: BigNumber.from(priceFeed.toString()),
         });
@@ -83,7 +83,7 @@ const Minter: React.FunctionComponent = () => {
   }, [priceFeed]);
   useEffect(() => {
     if (pricedUsd) {
-      setPriceUsdDisplay((pricedUsd / 100).toString());
+      setPriceCadDisplay((pricedUsd / 100).toString());
     }
   }, [pricedUsd]);
 
@@ -103,7 +103,7 @@ const Minter: React.FunctionComponent = () => {
           component={"h2"}
           sx={{ ml: "4rem", mt: "6.5rem" }}
         >
-          MINT YOUR SPACESHIP
+          MINT YOUR JEEP
         </Typography>
         <Typography
           variant={"subtitle1"}
@@ -154,14 +154,14 @@ const Minter: React.FunctionComponent = () => {
         </Typography>
       </div>
       <div className="minter_calculator">
-        <MinterDisplay ship={curShip} />
-        <MinterCreator ship={curShip} setShip={setCurShip} />
+        <MinterDisplay jeep={curJeep} />
+        <MinterCreator jeep={curJeep} setJeep={setCurJeep} />
       </div>
       <div className="minter_validator">
         <div className="minter_validator-left" />
         <div className="minter_validator-right">
           {mintActive ? (
-            <CustomButton onClick={mintSpaceShip}>Mint</CustomButton>
+            <CustomButton onClick={mintSpaceJeep}>Mint</CustomButton>
           ) : (
             <CustomButton>Coming Soon</CustomButton>
           )}
@@ -194,15 +194,15 @@ const Minter: React.FunctionComponent = () => {
       </div>
       <div className="minter_disclaimer">
         <Typography variant={"subtitle1"} component={"h2"} color={"white"}>
-          You can mint as many ships as you want until the countdown. The more
-          ships you have,
-          <br /> the better your chances of becoming one of the 3 great heroes
+          You can mint as many Jeeps as you want until the countdown. The more
+          Jeeps you have,
+          <br /> the better your chances of becoming the hero
           of this adventure.
           <br /> By the way,{" "}
           <span className="secondary-text">
-            100% of the ships revenues will be donated*
+            30% of the Jeeps' revenues will be donated
           </span>{" "}
-          to <a href="#">the associations</a>.
+          to <a href="#">charity.</a>.
         </Typography>
       </div>
     </div>

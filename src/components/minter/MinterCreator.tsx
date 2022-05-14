@@ -1,11 +1,11 @@
 import { Typography } from "@mui/material";
 import * as React from "react";
-import { Ship } from "@/components/minter/Minter";
+import { Jeep } from "@/components/minter/Minter";
 import minterOptions, { MinterVariant } from "@/config/minterOptions";
 
-const MinterCreator: React.FunctionComponent<{ ship: Ship; setShip: any }> = ({
-  ship,
-  setShip,
+const MinterCreator: React.FunctionComponent<{ jeep: Jeep; setJeep: any }> = ({
+  jeep,
+  setJeep,
 }) => {
   return (
     <div className="minter-creator">
@@ -22,21 +22,21 @@ const MinterCreator: React.FunctionComponent<{ ship: Ship; setShip: any }> = ({
           sx={{ fontWeight: "500" }}
           component={"span"}
         >
-          Skin
+          Colour
         </Typography>
         <Typography
           variant={"h4"}
           sx={{ fontWeight: "500" }}
           component={"span"}
         >
-          Weapon
+          Accessory
         </Typography>
         <Typography
           variant={"h4"}
           sx={{ fontWeight: "500" }}
           component={"span"}
         >
-          Booster
+          Power
         </Typography>
       </div>
       <div className="minter-creator_column">
@@ -44,62 +44,62 @@ const MinterCreator: React.FunctionComponent<{ ship: Ship; setShip: any }> = ({
           {minterOptions.body.variants.map((variant: MinterVariant, index: number) => (
             <div
               className={`minter-creator_button ${
-                index === ship.body ? "active" : ""
+                index === jeep.body ? "active" : ""
               }`}
               key={index}
             >
               { /* Name can be displayed with: variant.name */ }
               <img
                 src={minterOptions.body.getPath(index)}
-                onClick={() => setShip({ ...ship, body: index })}
+                onClick={() => setJeep({ ...jeep, body: index })}
               />
             </div>
           ))}
         </div>
         <div className="minter-creator_options">
-          {minterOptions.skin.variants.map((variant: MinterVariant, index: number) => (
+          {minterOptions.colour.variants.map((variant: MinterVariant, index: number) => (
             <div
               className={`minter-creator_button ${
-                index === ship.skin ? "active" : ""
+                index === jeep.colour ? "active" : ""
               }`}
               key={index}
             >
               { /* Name can be displayed with: variant.name */ }
               <img
-                src={minterOptions.skin.getPath(index)}
-                onClick={() => setShip({ ...ship, skin: index })}
+                src={minterOptions.colour.getPath(index)}
+                onClick={() => setJeep({ ...jeep, colour: index })}
               />
             </div>
           ))}
         </div>
         <div className="minter-creator_options">
-          {minterOptions.weapon.variants.map((variant: MinterVariant, index: number) => (
+          {minterOptions.accessory.variants.map((variant: MinterVariant, index: number) => (
             <div
               className={`minter-creator_button ${
-                index === ship.weapon ? "active" : ""
+                index === jeep.accessory ? "active" : ""
               }`}
               key={index}
             >
               { /* Name can be displayed with: variant.name */ }
               <img
-                src={minterOptions.weapon.getPath(index)}
-                onClick={() => setShip({ ...ship, weapon: index })}
+                src={minterOptions.accessory.getPath(index)}
+                onClick={() => setJeep({ ...jeep, accessory: index })}
               />
             </div>
           ))}
         </div>
         <div className="minter-creator_options">
-          {minterOptions.booster.variants.map((variant: MinterVariant, index: number) => (
+          {minterOptions.power.variants.map((variant: MinterVariant, index: number) => (
             <div
               className={`minter-creator_button ${
-                index === ship.booster ? "active" : ""
+                index === jeep.power ? "active" : ""
               }`}
               key={index}
             >
               { /* Name can be displayed with: variant.name */ }
               <img
-                src={minterOptions.booster.getPath(index)}
-                onClick={() => setShip({ ...ship, booster: index })}
+                src={minterOptions.power.getPath(index)}
+                onClick={() => setJeep({ ...jeep, power: index })}
               />
             </div>
           ))}

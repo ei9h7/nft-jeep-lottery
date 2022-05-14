@@ -303,7 +303,7 @@ contract Lottery is VRFConsumerBase {
         * Participate in the lottery
         * ####### Testing Args: [[0,0,0,0,0,0]]
     */
-    function participate(SpaceShips.Ship memory spaceShip) external payable {
+    function participate(Jeeps.Jeep memory jeep) external payable {
         // ####### To perform testing, COMMENT the following line
         require(getState() == State.OngoingParticipationPeriod, "Not currently accepting participants");
 
@@ -311,7 +311,7 @@ contract Lottery is VRFConsumerBase {
         require(msg.value >= entryPrice, "Not enough funds to participate. See getPriceToParticipate()");
 
         // Mint lottery ticket as an NFT
-        uint tokenId = token.mint(msg.sender, spaceShip);
+        uint tokenId = token.mint(msg.sender, jeep);
 
         // Register participation
         participants.push(Participant({

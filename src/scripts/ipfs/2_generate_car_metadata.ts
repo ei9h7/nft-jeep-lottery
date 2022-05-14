@@ -35,10 +35,10 @@ async function run() {
 
     // Generate and save collection metadata to tmp/
     const collectionMetadata = {
-        "name": "SpaceShips Season 1",
-        "description": "Aliens are taking over. Get a spaceship and join the army!",
+        "name": "Jeeps Season 1",
+        "description": "The trail is calling. Get a Jeep and join the adventure!",
         "image": getAssetURI(imagesCID, collectionProfilePicName),
-        "external_link": "https://nft-lottery-ten.vercel.app/",
+        "external_link": "https://nft-jeep-lottery.vercel.app/",
         //"seller_fee_basis_points": 100,
         //"fee_recipient": "0xf585378ff2A1DeCb335b4899250b83F46DC5c019"
     };
@@ -47,14 +47,14 @@ async function run() {
     // Generate and save variants metadata to tmp/
     let counter = 1;
     minterOptions.body.variants.forEach((bodyVariant, bodyIndex) => {
-        minterOptions.skin.variants.forEach((skinVariant, skinIndex) => {
-            minterOptions.weapon.variants.forEach((weaponVariant, weaponIndex) => {
-                minterOptions.booster.variants.forEach((boosterVariant, boosterIndex) => {
+        minterOptions.colour.variants.forEach((colourVariant, colourIndex) => {
+            minterOptions.accessory.variants.forEach((accessoryVariant, accessoryIndex) => {
+                minterOptions.power.variants.forEach((powerVariant, powerIndex) => {
                     
-                    const fileNameNoExt = `${bodyIndex}_${skinIndex}_${weaponIndex}_${boosterIndex}`;
+                    const fileNameNoExt = `${bodyIndex}_${colourIndex}_${accessoryIndex}_${powerIndex}`;
                     const nameProperty = (counter++).toString().padStart(3, "0");
                     const metadata = {
-                        "name" : `Spaceship #${nameProperty}`,
+                        "name" : `Jeep #${nameProperty}`,
                         "description": "",
                         "image": getAssetURI(imagesCID, `${fileNameNoExt}.png`),
                         "attributes": [
@@ -62,17 +62,17 @@ async function run() {
                                 "trait_type": minterOptions.body.name, 
                                 "value": bodyVariant.name
                             },
-                            { // Skin
-                                "trait_type": minterOptions.skin.name, 
-                                "value": skinVariant.name
+                            { // Colour
+                                "trait_type": minterOptions.colour.name, 
+                                "value": colourVariant.name
                             },
-                            { // Weapon
-                                "trait_type": minterOptions.weapon.name, 
-                                "value": weaponVariant.name
+                            { // Accessory
+                                "trait_type": minterOptions.accessory.name, 
+                                "value": accessoryVariant.name
                             },
-                            { // Booster
-                                "trait_type": minterOptions.booster.name, 
-                                "value": boosterVariant.name
+                            { // Power
+                                "trait_type": minterOptions.power.name, 
+                                "value": powerVariant.name
                             }
                         ]
                     };

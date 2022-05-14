@@ -26,21 +26,21 @@
     max-height: 400px;
 
     .body,
-    .skin,
-    .weapon,
-    .booster {
+    .colour,
+    .accessory,
+    .power {
       position: absolute;
       height: 400px;
       width: 400px;
     }
 
-    .weapon {
+    .accessory {
       z-index: 1;
     }
-    .skin {
+    .colour {
       z-index: 2;
     }
-    .booster {
+    .power {
       z-index: 3;
     }
     .body {

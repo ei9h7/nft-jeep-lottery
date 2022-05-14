@@ -11,7 +11,7 @@ const generationTmpPath = `${ipfsPath}/tmp`;
 const imagesNameCAR = "images";
 const metadataNameCAR = "metadata";
 
-const collectionProfilePicName = "SpaceTombo_ships.gif";
+const collectionProfilePicName = "JeepLottery_jeeps.gif";
 
 function copyFile(source: string, destination: string) {
 
