@@ -83,7 +83,7 @@ const Minter: React.FunctionComponent = () => {
   }, [priceFeed]);
   useEffect(() => {
     if (pricedUsd) {
-      setPriceCadDisplay((pricedUsd / 100).toString());
+      setPriceUsdDisplay((pricedUsd / 100).toString());
     }
   }, [pricedUsd]);
 
@@ -161,7 +161,7 @@ const Minter: React.FunctionComponent = () => {
         <div className="minter_validator-left" />
         <div className="minter_validator-right">
           {mintActive ? (
-            <CustomButton onClick={mintSpaceJeep}>Mint</CustomButton>
+            <CustomButton onClick={mintJeep}>Mint</CustomButton>
           ) : (
             <CustomButton>Coming Soon</CustomButton>
           )}
