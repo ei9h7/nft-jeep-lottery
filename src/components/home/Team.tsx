@@ -1,8 +1,8 @@
 import { createSvgIcon, Typography } from "@mui/material";
 import * as React from "react";
-import astronaut from "@/assets/images/team/astronaut.png";
-import astronautSoxz from "@/assets/images/team/astronaut-soxz.png";
-import astronautJuicy from "@/assets/images/team/astronaut-juicy.png";
+import ei9h7 from "@/assets/images/team/astronaut.png";
+// import astronautSoxz from "@/assets/images/team/astronaut-soxz.png";
+// import astronautJuicy from "@/assets/images/team/astronaut-juicy.png";
 
 type TeamLink = {
   icon: any;
@@ -47,7 +47,7 @@ const Team: React.FunctionComponent = () => {
     {
       name: "Ayton MacEachern",
       alias: "ei9h7",
-      img: astronaut,
+      img: ei9h7,
       desc: `Weird robot trying to be human, with an interest in cyber security, cryptography, and applications development.
       Ayton develops the smart contracts, the lottery's internal mechanics, and the generation of NFTs.
       web3 is its new crush.`,
@@ -64,7 +64,7 @@ const Team: React.FunctionComponent = () => {
         },
       ],
     },
-    {
+    /* {
       name: "Lucas Giffard",
       alias: "SoxZz5",
       img: astronautSoxz,
@@ -103,7 +103,7 @@ He also accompanies the project in the realization of a whitepaper by bringing a
           url: "https://github.com/JuicySeven",
         },
       ],
-    },
+    }, */
   ];
   return (
     <div className="full-height team" id="team">

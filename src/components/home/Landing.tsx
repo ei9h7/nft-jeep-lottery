@@ -14,10 +14,9 @@ const Landing: React.FunctionComponent = () => {
             component={"h1"}
             color={"white"}
             fontWeight={"bold"}
+            align={"center"}
           >
-            Take part in the only blockchain
-            <br /> jeep adventure to win a custom
-            <br /> V8 Jeep Race Truck
+            NFT Jeep Adventure! <br />Each NFT minted has a <br />1 in 10000 chance<br /> to win a <br /><br />Custom V8 Jeep Race Truck
           </Typography>
           <Countdown />
         </div>
@@ -56,7 +55,7 @@ const Landing: React.FunctionComponent = () => {
         </div>
         <div className="landing_subtitle-text">
           <Typography variant={"subtitle1"} component={"h2"} color={"white"}>
-            <span className="secondary-text">blockchain raffle</span>
+            <span className="secondary-text">blockchain raffle </span>
             for a built V8 Jeep!
           </Typography>
         </div>
